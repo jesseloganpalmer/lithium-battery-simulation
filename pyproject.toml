@@ -40,7 +40,7 @@ testpaths = ["src", "tests"]
 xfail_strict = true
 
 [tool.ruff]
-line-length = 100
+line-length = 80
 target-version = "py312"
 
 [tool.ruff.format]
