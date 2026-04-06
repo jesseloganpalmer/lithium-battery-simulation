@@ -1,5 +1,8 @@
-import pybamm
+"""Lithium battery simulation example."""
 
+from __future__ import annotations
+
+import pybamm
 
 experiment = pybamm.Experiment(
     [

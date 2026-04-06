@@ -49,6 +49,7 @@ target-version = "py312"
 docstring-code-format = true
 
 [tool.ruff.lint]
+select = ["ALL"]
 ignore = [
     "ANN1",
     "COM812",

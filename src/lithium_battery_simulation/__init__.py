@@ -1,4 +1,4 @@
-"""{{project_description}}"""
+"""Lithium battery simulation package."""
 
 from __future__ import annotations
 
