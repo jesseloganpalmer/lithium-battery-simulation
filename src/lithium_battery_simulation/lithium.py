@@ -1,5 +1,4 @@
 import pybamm
-import matplotlib.pyplot as plt
 
 
 experiment = pybamm.Experiment(
