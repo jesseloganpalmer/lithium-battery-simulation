@@ -23,20 +23,20 @@ theme:
   code: DM Mono
   language: en
   palette:
-      - scheme: default
-        toggle:
-          icon: material/weather-sunny
-          name: Switch to Dark Mode
-        primary: custom
-        accent: custom
-      - scheme: slate
-        toggle:
-          icon: material/weather-night
-          name: Switch to Light Mode
-        primary: custom
-        accent: custom
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to Dark Mode
+      primary: custom
+      accent: custom
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to Light Mode
+      primary: custom
+      accent: custom
   icon:
-      repo: fontawesome/brands/github
+    repo: fontawesome/brands/github
 
 plugins:
   - autorefs
