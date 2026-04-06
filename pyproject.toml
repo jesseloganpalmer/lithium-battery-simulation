@@ -6,7 +6,12 @@ authors = [{ name = "Jesse Palmer", email = "jlp74@cam.ac.uk" }]
 
 requires-python = ">=3.12"
 readme = "README.md"
-dependencies = ["copier >=9.4.1", "matplotlib>=3.10.8", "pybamm>=26.3.0"]
+dependencies = [
+    "copier >=9.4.1",
+    "matplotlib>=3.10.8",
+    "pre-commit>=4.5.1",
+    "pybamm>=26.3.0",
+]
 
 [project.urls]
 Repository = "https://github.com/jesseloganpalmer/lithium-battery-simulation"

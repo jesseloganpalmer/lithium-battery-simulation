@@ -672,6 +672,7 @@ source = { editable = "." }
 dependencies = [
     { name = "copier" },
     { name = "matplotlib" },
+    { name = "pre-commit" },
     { name = "pybamm" },
 ]
 
@@ -693,6 +694,7 @@ docs = [
 requires-dist = [
     { name = "copier", specifier = ">=9.4.1" },
     { name = "matplotlib", specifier = ">=3.10.8" },
+    { name = "pre-commit", specifier = ">=4.5.1" },
     { name = "pybamm", specifier = ">=26.3.0" },
 ]
 
