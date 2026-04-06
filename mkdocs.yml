@@ -1,0 +1,124 @@
+site_name: lithium battery simulation
+repo_url: 
+repo_name: lithium-battery-simulation
+
+nav:
+  - index.md
+
+theme:
+  name: material
+  features:
+    - content.code.annotation
+    - content.code.copy
+    - content.tabs.link
+    - navigation.indexes
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggestion
+  font:
+  text: DM Sans
+  code: DM Mono
+  language: en
+  palette:
+      - scheme: default
+        toggle:
+          icon: material/weather-sunny
+          name: Switch to Dark Mode
+        primary: custom
+        accent: custom
+      - scheme: slate
+        toggle:
+          icon: material/weather-night
+          name: Switch to Light Mode
+        primary: custom
+        accent: custom
+  icon:
+      repo: fontawesome/brands/github
+
+plugins:
+  - autorefs
+  - markdown-exec
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            allow_inspection: true
+            annotations_path: source
+            docstring_options:
+              ignore_init_summary: true
+              returns_named_value: false
+              returns_type_in_property_summary: true
+            docstring_section_style: table
+            heading_level: 1
+            inherited_members: true
+            merge_init_into_class: true
+            separate_signature: true
+            show_root_full_path: false
+            show_root_heading: true
+            show_signature_annotations: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+strict: true
+
+validation:
+  links:
+    absolute_links: warn
+    anchors: warn
+    not_found: warn
+    unrecognized_links: warn
+  nav:
+    absolute_links: warn
+    not_found: warn
+    omitted_files: warn
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

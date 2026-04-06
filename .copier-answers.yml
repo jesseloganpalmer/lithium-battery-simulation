@@ -1,0 +1,9 @@
+# Changes here will be overwritten by Copier
+_commit: 986bf19
+_src_path: https://github.com/jesseloganpalmer/battery-project-template
+project_description: Simulation for running lithium battery analysis
+project_name: lithium battery simulation
+python_package_distribution_name: lithium-battery-simulation
+python_package_import_name: lithium_battery_simulation
+repository_name: lithium-battery-simulation
+repository_url: https://github.com/jesseloganpalmer/lithium-battery-simulation

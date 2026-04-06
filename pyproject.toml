@@ -1,0 +1,81 @@
+[project]
+name = "lithium-battery-simulation"
+version = "0.1.0"
+description = "Simulation for running lithium battery analysis"
+authors = [{name = "Jesse Palmer", email = "jlp74@cam.ac.uk"}]
+
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+    "copier >=9.4.1",
+    "pybamm>=26.3.0",
+]
+
+[project.urls]
+Repository = "https://github.com/jesseloganpalmer/lithium-battery-simulation"
+
+[dependency-groups]
+dev = ["pre-commit >=4.5","ruff>=0.15.0","mypy>=1.2.0","pytest >=8.3.3",]
+docs =["mkdocs-material>=9.5.44,<10", "mkdocstrings-python>=1.12.2,<2","black>=25.0.0,<26","markdown-exec >=1.12"]
+
+[tool.uv]
+default-groups = ["dev","docs"]
+
+[tool.mypy]
+mypy_path = "src"
+strict = true
+
+[[tool.mypy.overrides]]
+module = []
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = [
+    "--doctest-modules",
+    "--doctest-continue-on-failure",
+    "--import-mode=importlib",
+]
+doctest_optionflags = ["NORMALIZE_WHITESPACE"]
+testpaths = ["src", "tests"]
+xfail_strict = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN1",
+    "COM812",
+    "COM819",
+    "D206",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "E501",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+]
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+parametrize-values-type = "tuple"
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[build-system]
+requires = ["uv_build>=0.7.21,<0.8"]
+build-backend = "uv_build"
