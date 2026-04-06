@@ -6,7 +6,7 @@ authors = [{ name = "Jesse Palmer", email = "jlp74@cam.ac.uk" }]
 
 requires-python = ">=3.12"
 readme = "README.md"
-dependencies = ["copier >=9.4.1", "pybamm>=26.3.0"]
+dependencies = ["copier >=9.4.1", "matplotlib>=3.10.8", "pybamm>=26.3.0"]
 
 [project.urls]
 Repository = "https://github.com/jesseloganpalmer/lithium-battery-simulation"
@@ -28,7 +28,7 @@ mypy_path = "src"
 strict = true
 
 [[tool.mypy.overrides]]
-module = []
+module = ["pybamm"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]
@@ -49,6 +49,7 @@ target-version = "py312"
 docstring-code-format = true
 
 [tool.ruff.lint]
+select = ["ALL"]
 ignore = [
     "ANN1",
     "COM812",

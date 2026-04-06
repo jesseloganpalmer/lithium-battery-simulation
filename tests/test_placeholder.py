@@ -5,4 +5,4 @@ from __future__ import annotations
 
 def test_placeholder() -> None:
     """Remove after cloning."""
-    assert True
+    assert True  # noqa: S101
