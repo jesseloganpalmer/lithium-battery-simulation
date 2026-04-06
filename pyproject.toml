@@ -2,24 +2,26 @@
 name = "lithium-battery-simulation"
 version = "0.1.0"
 description = "Simulation for running lithium battery analysis"
-authors = [{name = "Jesse Palmer", email = "jlp74@cam.ac.uk"}]
+authors = [{ name = "Jesse Palmer", email = "jlp74@cam.ac.uk" }]
 
 requires-python = ">=3.12"
 readme = "README.md"
-dependencies = [
-    "copier >=9.4.1",
-    "pybamm>=26.3.0",
-]
+dependencies = ["copier >=9.4.1", "pybamm>=26.3.0"]
 
 [project.urls]
 Repository = "https://github.com/jesseloganpalmer/lithium-battery-simulation"
 
 [dependency-groups]
-dev = ["pre-commit >=4.5","ruff>=0.15.0","mypy>=1.2.0","pytest >=8.3.3",]
-docs =["mkdocs-material>=9.5.44,<10", "mkdocstrings-python>=1.12.2,<2","black>=25.0.0,<26","markdown-exec >=1.12"]
+dev = ["pre-commit >=4.5", "ruff>=0.15.0", "mypy>=1.2.0", "pytest >=8.3.3"]
+docs = [
+    "mkdocs-material>=9.5.44,<10",
+    "mkdocstrings-python>=1.12.2,<2",
+    "black>=25.0.0,<26",
+    "markdown-exec >=1.12",
+]
 
 [tool.uv]
-default-groups = ["dev","docs"]
+default-groups = ["dev", "docs"]
 
 [tool.mypy]
 mypy_path = "src"
