@@ -1,1 +1,1 @@
-"""Tests for the `{{ python_package_distribution_name }}` package."""
+"""Tests for the lithium-battery-simulation package."""
