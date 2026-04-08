@@ -1,1 +1,0 @@
-"""Tests for the `{{ python_package_distribution_name }}` package."""
