@@ -1,0 +1,50 @@
+default_install_hook_types = ["pre-commit", "pre-push"]
+
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v6.0.0"
+hooks = [
+    { id = "check-added-large-files" },
+    { id = "check-ast" },
+    { id = "check-json" },
+    { id = "check-merge-conflict" },
+    { id = "check-toml" },
+    { id = "check-xml" },
+    { id = "check-yaml", args = [
+        "--unsafe",
+    ] },
+    { id = "debug-statements" },
+    { id = "end-of-file-fixer" },
+    { id = "mixed-line-ending", args = [
+        "--fix=lf",
+    ] },
+    { id = "name-tests-test", args = [
+        "--pytest-test-first",
+    ], exclude = 'tests/.*fixtures.*\.py' },
+    { id = "pretty-format-json" },
+    { id = "requirements-txt-fixer" },
+    { id = "trailing-whitespace" },
+]
+
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.15.10"
+hooks = [
+    { id = "ruff", args = ["--fix", "--exit-non-zero-on-fix"] },
+    { id = "ruff-format" },
+]
+
+[[repos]]
+repo = "https://github.com/astral-sh/uv-pre-commit"
+rev = "0.11.6"
+hooks = [{ id = "uv-lock" }]
+
+[[repos]]
+repo = "local"
+hooks = [
+    { id = "mypy-check", name = "mypy-check", stages = [
+        "pre-push",
+    ], types = [
+        "python",
+    ], entry = "uv run mypy .", language = "system", pass_filenames = false, always_run = true },
+]
