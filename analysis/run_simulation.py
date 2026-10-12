@@ -1,4 +1,4 @@
-"""Run the simulation."""  # noqa: INP001
+"""Run the simulation."""
 
 from __future__ import annotations
 

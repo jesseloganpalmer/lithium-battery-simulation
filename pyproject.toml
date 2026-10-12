@@ -17,7 +17,7 @@ dependencies = [
 Repository = "https://github.com/jesseloganpalmer/lithium-battery-simulation"
 
 [dependency-groups]
-dev = ["pre-commit >=4.5", "ruff>=0.15.0", "mypy>=1.2.0", "pytest >=8.3.3"]
+dev = ["prek>=0.5.5", "ruff>=0.15.0", "mypy>=1.2.0", "pytest >=8.3.3"]
 docs = [
     "mkdocs-material>=9.5.44,<10",
     "mkdocstrings-python>=1.12.2,<2",
@@ -72,7 +72,21 @@ ignore = [
     "Q002",
     "Q003",
     "W191",
+    # Relaxed for research/simulation scripts
+    "ANN",     # type annotations
+    "D100",    # module docstrings
+    "D103",    # function docstrings
+    "FBT003",  # boolean positional values (common in plotting APIs)
+    "G004",    # f-strings in logging
+    "INP001",  # scripts are not packages
+    "N803",    # physics notation in argument names
+    "N806",    # physics notation in variable names
+    "PLR2004", # magic values
+    "T201",    # print
 ]
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]
+
 [tool.ruff.lint.flake8-pytest-style]
 fixture-parentheses = false
 mark-parentheses = false

@@ -1,0 +1,9 @@
+electrode,label,secondary_diameter_um,fitted_diffusion_radius_nm,ratio_to_primary_radius,rmse_mah_g
+nano,Unstructured LTO nanoparticles,0.0,245.60345130826562,2.855854084979833,4.995086117858568
+polydisperse,"Bulk-emulsified LTO microparticles (2.3 um, CV 67 %)",2.3,84.86413305952688,0.9867922448782194,2.562845693900851
+uniform,"Membrane-emulsified LTO microparticles (8.0 um, CV 17 %)",8.0,87.62749260349167,1.0189243325987403,2.2066157101482142
+oxcnt_mp,Membrane-emulsified LTO/oxCNT microparticles (9.1 um),9.1,89.35795682380414,1.0390460095791179,3.4772498624165995
+cnt_pvp_mp,Membrane-emulsified LTO/CNT/PVP microparticles (9.3 um),9.3,110.84137674787402,1.288853217998535,1.2747255046918573
+nano_oxcnt,Unstructured LTO + oxCNT powder mixture,0.0,216.07966850749813,2.5125542849709084,4.724525284977761
+nano_cnt,Unstructured LTO + CNT powder mixture,0.0,126.99889616668666,1.4767313507754263,7.331009053909969
+commercial,"Commercial spray-dried LTO microparticles (BTR, D50 4-10 um)",7.0,134.12733950764348,1.5596202268330637,0.9431929556467512
