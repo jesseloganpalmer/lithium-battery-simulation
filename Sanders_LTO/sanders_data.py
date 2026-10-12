@@ -14,6 +14,7 @@ back.  Values that are *derived* (rather than transcribed) live in
 from __future__ import annotations
 
 from dataclasses import dataclass
+from typing import Any
 
 # ---------------------------------------------------------------------------
 # Cell / protocol constants (Methods, main text)
@@ -345,7 +346,7 @@ BET_SURFACE_AREA_M2_G: dict[str, float] = {
 # Tables S14 / S15: the thick, high-loading electrode (Figure S14)
 # ---------------------------------------------------------------------------
 HIGH_LOADING_C_RATES = (0.1, 0.5, 1.0, 3.0)
-HIGH_LOADING = {
+HIGH_LOADING: dict[str, Any] = {
     "thickness_um": 245.0,
     "thickness_sd_um": 16.0,
     "active_loading_mg_cm2": 15.5,

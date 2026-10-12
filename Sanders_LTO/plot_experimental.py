@@ -24,6 +24,7 @@ from lto_model import RESULTS_DIR
 
 if TYPE_CHECKING:
     from matplotlib.axes import Axes
+    from matplotlib.figure import Figure
 
 logger = logging.getLogger(__name__)
 
@@ -83,7 +84,7 @@ def _draw_panel(  # noqa: PLR0913
     axis.legend(loc="lower left", ncol=1)
 
 
-def figure_lto_rate_tests() -> plt.Figure:
+def figure_lto_rate_tests() -> Figure:
     """Replot Figure 6d and 6e: structuring effect on the pure LTO electrodes.
 
     Returns:
@@ -133,7 +134,7 @@ def figure_lto_rate_tests() -> plt.Figure:
     return fig
 
 
-def figure_composite_rate_tests() -> plt.Figure:
+def figure_composite_rate_tests() -> Figure:
     """Replot Figure 7b and 7c: CNT composites, structured vs unstructured.
 
     Two hues carry the CNT chemistry and the line style carries whether the
@@ -197,7 +198,7 @@ def figure_composite_rate_tests() -> plt.Figure:
     return fig
 
 
-def figure_commercial_benchmark() -> plt.Figure:
+def figure_commercial_benchmark() -> Figure:
     """Replot Figure S12a/b against the membrane-emulsified material.
 
     Returns:
@@ -247,7 +248,7 @@ def figure_commercial_benchmark() -> plt.Figure:
     return fig
 
 
-def figure_high_loading() -> plt.Figure:
+def figure_high_loading() -> Figure:
     """Replot Figure S14a/b: the 19.4 mg/cm2 microparticle electrode.
 
     Returns:

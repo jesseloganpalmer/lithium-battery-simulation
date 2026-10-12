@@ -26,6 +26,7 @@ import sanders_data as sd
 
 if TYPE_CHECKING:
     from matplotlib.axes import Axes
+    from matplotlib.figure import Figure
 
 logger = logging.getLogger(__name__)
 
@@ -283,7 +284,7 @@ def panel_rate_curves(
     axis.set_axisbelow(True)
 
 
-def figure_design_map(rows: list[dict[str, str]]) -> plt.Figure:
+def figure_design_map(rows: list[dict[str, str]]) -> Figure:
     """Assemble the three-panel design map.
 
     Args:

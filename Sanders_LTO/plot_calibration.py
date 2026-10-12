@@ -18,12 +18,17 @@ from __future__ import annotations
 
 import csv
 import logging
+from typing import TYPE_CHECKING
 
 import lto_model as lm
 import matplotlib.pyplot as plt
 import numpy as np
 import plot_style as ps
 import sanders_data as sd
+from matplotlib.patches import Rectangle
+
+if TYPE_CHECKING:
+    from matplotlib.figure import Figure
 
 logger = logging.getLogger(__name__)
 
@@ -58,7 +63,7 @@ def simulate_overlay_curves(
 def figure_model_vs_experiment(
     curves: dict[str, np.ndarray],
     fitted_rows: list[dict[str, str]],
-) -> plt.Figure:
+) -> Figure:
     """Build the two-panel model-versus-experiment figure.
 
     Args:
@@ -154,8 +159,8 @@ def figure_model_vs_experiment(
     axis.grid(axis="x", alpha=0.9)
     axis.set_axisbelow(True)
     handles = [
-        plt.Rectangle((0, 0), 1, 1, color=ps.SERIES[0]),
-        plt.Rectangle((0, 0), 1, 1, color=ps.SERIES[2]),
+        Rectangle((0, 0), 1, 1, color=ps.SERIES[0]),
+        Rectangle((0, 0), 1, 1, color=ps.SERIES[2]),
     ]
     axis.legend(
         handles,

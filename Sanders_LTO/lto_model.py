@@ -333,7 +333,7 @@ def intra_particle_resistance_ohm(  # noqa: PLR0913
     # resistances are in series, i.e. their reciprocal conductivities sum.
     ionic = electrolyte_conductivity_s_m * intra_particle_porosity**1.5
     inverse_conductivity = 1.0 / intra_particle_conductivity_s_m + 1.0 / ionic
-    return (
+    return float(
         secondary_radius_m**2
         * inverse_conductivity
         / (
@@ -596,6 +596,9 @@ def structure_from_electrode(
     r0 = electrode.eis_r0_ohm or reference.eis_r0_ohm
     r1 = electrode.eis_r1_ohm or reference.eis_r1_ohm
     r3 = electrode.eis_r3_ohm or reference.eis_r3_ohm
+    if r0 is None or r1 is None or r3 is None:
+        msg = f"No EIS resistances for {key!r} or its fallback {fallback!r}"
+        raise ValueError(msg)
 
     return Structure(
         primary_radius_m=primary_radius_m,
@@ -606,8 +609,8 @@ def structure_from_electrode(
         thickness_m=electrode.thickness_um * 1e-6,
         active_loading_kg_m2=electrode.active_loading_mg_cm2 * 1e-2,
         porosity=electrode.porosity,
-        series_resistance_ohm=float(r0) + float(r1),
-        charge_transfer_resistance_ohm=float(r3),
+        series_resistance_ohm=r0 + r1,
+        charge_transfer_resistance_ohm=r3,
     )
 
 

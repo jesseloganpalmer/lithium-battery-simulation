@@ -21,6 +21,8 @@ import plot_style as ps
 import run_scale_map as rsm
 import sanders_data as sd
 from matplotlib.colors import LinearSegmentedColormap, Normalize
+from matplotlib.lines import Line2D
+from matplotlib.patches import Rectangle
 
 if TYPE_CHECKING:
     from matplotlib.axes import Axes
@@ -155,7 +157,7 @@ def draw_panel(  # noqa: PLR0913
             )
             if not fits[i, j]:
                 axis.add_patch(
-                    plt.Rectangle(
+                    Rectangle(
                         (j, i),
                         1,
                         1,
@@ -185,7 +187,7 @@ def draw_panel(  # noqa: PLR0913
         rsm.SECONDARY_DIAMETERS_UM.index(SANDERS_SECONDARY_UM),
     )
     axis.add_patch(
-        plt.Rectangle(
+        Rectangle(
             (sanders[1] + 0.06, sanders[0] + 0.06),
             0.88,
             0.88,
@@ -247,11 +249,11 @@ def figure_scale_map(rows: list[dict[str, str]]) -> Figure:
         mappable, ax=axes, fraction=0.035, pad=0.02, aspect=32
     )
     colorbar.set_label("Volumetric energy density / Wh L$^{-1}$", fontsize=9)
-    colorbar.outline.set_visible(False)
+    colorbar.outline.set_visible(False)  # type: ignore[operator]  # mpl stub bug
     colorbar.ax.tick_params(length=0, labelsize=8)
 
     legend_handles = [
-        plt.Line2D(
+        Line2D(
             [],
             [],
             marker="*",
@@ -261,7 +263,7 @@ def figure_scale_map(rows: list[dict[str, str]]) -> Figure:
             markeredgecolor=ps.TEXT_PRIMARY,
             label="Model optimum",
         ),
-        plt.Rectangle(
+        Rectangle(
             (0, 0),
             1,
             1,
@@ -270,7 +272,7 @@ def figure_scale_map(rows: list[dict[str, str]]) -> Figure:
             linewidth=2.2,
             label="What Sanders et al. made (172 nm x 8 µm)",
         ),
-        plt.Rectangle(
+        Rectangle(
             (0, 0),
             1,
             1,
@@ -280,7 +282,7 @@ def figure_scale_map(rows: list[dict[str, str]]) -> Figure:
             linewidth=0.0,
             label="Particle thicker than the coating",
         ),
-        plt.Line2D(
+        Line2D(
             [],
             [],
             marker="$✕$",

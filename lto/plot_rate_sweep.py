@@ -38,7 +38,7 @@ fig, ax = plt.subplots(figsize=(9, 5.5))
 # was Sanders' experimental categories, not what this model varies; the model
 # varies a continuous size parameter and should be presented that way).
 sizes_um = sorted(df["particle_diameter_um"].unique())
-cmap = plt.cm.viridis_r(np.linspace(0, 1, len(sizes_um)))
+cmap = plt.get_cmap("viridis_r")(np.linspace(0, 1, len(sizes_um)))
 
 for d_um, color in zip(sizes_um, cmap, strict=True):
     cycles, caps = build_step_series(df, d_um)

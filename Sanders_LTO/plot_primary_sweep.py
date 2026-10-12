@@ -24,6 +24,8 @@ import sanders_data as sd
 
 if TYPE_CHECKING:
     from matplotlib.axes import Axes
+    from matplotlib.figure import Figure
+    from numpy.typing import ArrayLike
 
 logger = logging.getLogger(__name__)
 
@@ -149,11 +151,11 @@ def panel_capacity_vs_primary(
 
     diffusivity = calibration.lto_diffusivity_m2_s
 
-    def to_tau(diameter_nm: np.ndarray) -> np.ndarray:
+    def to_tau(diameter_nm: ArrayLike) -> np.ndarray:
         """Diameter [nm] -> solid-state diffusion time [s]."""
         return (np.asarray(diameter_nm) * 1e-9 / 2.0) ** 2 / diffusivity
 
-    def from_tau(tau_s: np.ndarray) -> np.ndarray:
+    def from_tau(tau_s: ArrayLike) -> np.ndarray:
         """Solid-state diffusion time [s] -> diameter [nm]."""
         return 2e9 * np.sqrt(np.asarray(tau_s) * diffusivity)
 
@@ -233,7 +235,7 @@ def panel_rate_curves(axis: Axes, rows: list[dict[str, str]]) -> None:
 
 def figure_primary_sweep(
     rows: list[dict[str, str]], calibration: lm.Calibration
-) -> plt.Figure:
+) -> Figure:
     """Build the two-panel primary-size figure.
 
     Args:

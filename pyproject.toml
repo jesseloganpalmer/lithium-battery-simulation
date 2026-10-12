@@ -31,9 +31,14 @@ default-groups = ["dev", "docs"]
 [tool.mypy]
 mypy_path = "src"
 strict = true
+# Relaxed for research/simulation scripts (mirrors the ruff ANN ignores)
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_calls = false
+disallow_any_generics = false
 
 [[tool.mypy.overrides]]
-module = ["pybamm"]
+module = ["pybamm", "pandas", "scipy.*"]
 ignore_missing_imports = true
 
 [tool.pytest.ini_options]

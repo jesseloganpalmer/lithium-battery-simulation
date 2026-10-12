@@ -198,7 +198,7 @@ def plot_step_curve(  # noqa: PLR0913
     )
 
 
-def with_recovery(values: Sequence[float]) -> list[float]:
+def with_recovery(values: Sequence[float] | np.ndarray) -> list[float]:
     """Append the return-to-0.1C recovery block to a tabulated rate series.
 
     Tables S8 and S9 stop at 20C; the corresponding figures then return to

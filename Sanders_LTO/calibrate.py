@@ -25,6 +25,7 @@ import csv
 import dataclasses
 import logging
 import time
+from typing import Any
 
 import lto_model as lm
 import numpy as np
@@ -176,7 +177,7 @@ def main() -> None:
     logger.info("  D_LTO = %.3e m2/s", diffusivity)
 
     logger.info("Fitting per-electrode diffusion domain radii ...")
-    rows = []
+    rows: list[dict[str, Any]] = []
     for key, electrode in sd.ELECTRODES.items():
         radius_m, rmse = fit_diffusion_radius(key, calibration)
         primary_radius_m = sd.PRIMARY_PARTICLE_Z_AVERAGE_M / 2.0
